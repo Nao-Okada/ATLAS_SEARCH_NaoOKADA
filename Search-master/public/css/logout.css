@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', "hiragino kaku gothic pro", meiryo, "ms pgothic", sans-serif;
+}
+
+/* header */
+header {
+  margin: 0 auto;
+  padding: 80px 0 20px 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+/* form group */
+#container {
+  width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+.register {
+  text-align: center;
+  font-size: 28px;
+  font-weight: lighter;
+}
+
+.form-content {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+label {
+  width: 300px;
+  padding-bottom: 10px;
+  display: block;
+  color: #000;
+  text-align: left;
+  font-size: 14px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 5px 0;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.username {
+  width: 220px;
+}
+
+.family {
+  margin-right: 10px;
+}
+
+.first {
+  margin-left: 10px;
+}
+
+.yyyy {
+  width: 200px;
+}
+
+.date {
+  width: 120px;
+  margin-left: 10px;
+}
+
+.others {
+  width: 460px;
+}
+
+.input form {
+  text-decoration: none;
+}
+
+.flexStyle {
+  display: flex;
+}
+
+.submit {
+  width: 100px;
+  margin: 30px 0 20px;
+  padding: 5px 10px;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  border: none;
+  background-color: #ffe135;
+  transition: 0.3s;
+}
+
+.moveBtn {
+  margin: 30px;
+}
+
+.moveBtn a {
+  text-decoration: none;
+  color: #6C6C6C;
+}
+
+.moveBtn a:hover {
+  color: #ffe135;
+  transition: 0.3s;
+}
+
+#clear .welcome {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+#clear .username {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#clear .username span {
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+#clear .thanks {
+  margin: 20px 0 80px 0;
+  font-size: 24px;
+  font-weight: bolder;
+  letter-spacing: 0.05em;
+}

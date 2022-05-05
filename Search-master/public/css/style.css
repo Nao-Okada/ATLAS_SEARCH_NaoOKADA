@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: SF Optimized, system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', "hiragino kaku gothic pro", meiryo, "ms pgothic", sans-serif;
+}
+
+
+/* header contents*/
+
+.head #banana {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  height: 50px;
+  border-bottom: 1px solid;
+  background-color: #fff;
+}
+
+.head .logo {
+  margin: auto 0;
+  padding: 0;
+  width: 120px;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.head #banana .logo a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+.head h1 a {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* body */
+#row {
+  display: flex;
+  flex-flow: wrap;
+}
+
+#container {
+  width: 70%;
+  margin-top: 80px;
+}
