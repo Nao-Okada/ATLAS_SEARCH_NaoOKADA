@@ -23,18 +23,18 @@
     <div class="flexStyle">
       <div class="family username">
         {{ Form::label('Family') }}
-        {{ Form::text('family_name',null,['class' => 'input']) }}
+        {{ Form::text('last',null,['class' => 'input']) }}
       </div>
       <div class="first username">
         {{ Form::label('First') }}
-        {{ Form::text('first_name',null,['class' => 'input']) }}
+        {{ Form::text('first',null,['class' => 'input']) }}
       </div>
     </div>
     <h3 class="form-label">KANA</h3>
     <div class="flexStyle">
       <div class="family username">
         {{ Form::label('Family') }}
-        {{ Form::text('family_kana',null,['class' => 'input']) }}
+        {{ Form::text('last_kana',null,['class' => 'input']) }}
       </div>
       <div class="first username">
         {{ Form::label('First') }}
@@ -75,6 +75,23 @@
       </div>
     </div>
   </div>
+
+  <div class="gender-group row">
+    <label for="gender" class="col-md-4 col-form-label text-md-right">Gender</label>
+
+    <div class="col-md-6" style="padding-top: 8px">
+        <input id="gender-m" type="radio" name="gender" value="male">
+        <label for="gender-m">Male</label>
+        <input id="gender-f" type="radio" name="gender" value="female">
+        <label for="gender-f">Female</label>
+
+        @if ($errors->has('gender'))
+            <span class="invalid-feedback">
+                <strong>{{ $errors->first('gender') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
 
   <div class="mail-group others">
     {{ Form::label('MailAddress') }}

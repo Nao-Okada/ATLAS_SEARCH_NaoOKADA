@@ -14,10 +14,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'username' => $data['username'],
-            'username_kana' => $data['username_kana'],
-            'birthday' => $date['birthday'],
-            'admission_date' => $date['admission_date'],
+            'last'.'first' => $data['username'],
+            'last_kana'.'first_kana' => $data['username_kana'],
+            'birth_year'.'birth_month'.'birth_date' => $date['birthday'],
+            'admission_year'.'admission_month'.'admission_date' => $date['admission_date'],
             'gender' => $date['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
