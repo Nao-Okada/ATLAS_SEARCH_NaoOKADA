@@ -14,7 +14,9 @@
   {{ Form::submit('LOGIN',['class' => 'submit']) }}
 </div>
 
-<p class="moveBtn"><a href="/register">新規ユーザーの方はこちら</a></p>
+<div class="move">
+  <p class="moveBtn"><a href="/register">新規ユーザーの方はこちら</a></p>
+</div>
 
 {!! Form::close() !!}
 

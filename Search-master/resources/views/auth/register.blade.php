@@ -17,7 +17,7 @@
 
 <h2 class="register">Register</h2>
 
-<div class="form-content">
+<div class="register-content">
   <div class="name-group">
     <h3 class="form-label">USERNAME</h3>
     <div class="flexStyle">
@@ -45,8 +45,8 @@
 
   <div class="date-group">
     <h3 class="form-label">BIRTHDAY</h3>
-    <div class="flexStyle">
-      <div class="birth_year yyyy">
+    <div class="flexStyle{{ $errors->has('birth') || $errors->has('birth_year') || $errors->has('birth_month') || $errors->has('birth_day') ? ' has-error' : '' }}">
+      <div class="birth_year date">
         {{ Form::label('Year') }}
         {{ Form::text('birth_year',null,['class' => 'input']) }}
       </div>
@@ -61,7 +61,7 @@
     </div>
     <h3 class="form-label">ADMINISTERED</h3>
     <div class="flexStyle">
-      <div class="admission_year yyyy">
+      <div class="admission_year date">
         {{ Form::label('Year') }}
         {{ Form::text('admission_year',null,['class' => 'input']) }}
       </div>
@@ -76,20 +76,23 @@
     </div>
   </div>
 
-  <div class="gender-group row">
-    <label for="gender" class="col-md-4 col-form-label text-md-right">Gender</label>
+  <div class="gender-group">
+    <label for="gender">Gender</label>
+    <div class="flexStyle">
+      <div class="male-box">
+          <input id="gender-m" type="radio" name="gender" value="male">
+          <label for="gender-m">Male</label>
+      </div>
+      <div class="female-box">
+          <input id="gender-f" type="radio" name="gender" value="female">
+          <label for="gender-f">Female</label>
+      </div>
 
-    <div class="col-md-6" style="padding-top: 8px">
-        <input id="gender-m" type="radio" name="gender" value="male">
-        <label for="gender-m">Male</label>
-        <input id="gender-f" type="radio" name="gender" value="female">
-        <label for="gender-f">Female</label>
-
-        @if ($errors->has('gender'))
-            <span class="invalid-feedback">
-                <strong>{{ $errors->first('gender') }}</strong>
-            </span>
-        @endif
+          @if ($errors->has('gender'))
+              <span class="invalid-feedback">
+                  <strong>{{ $errors->first('gender') }}</strong>
+              </span>
+          @endif
     </div>
 </div>
 
@@ -109,7 +112,9 @@
   {{ Form::submit('CONFIRM', ['class' => 'submit']) }}
 </div>
 
-<p class="moveBtn"><a href="/login">ログイン画面へ戻る</a></p>
+<div class="move">
+  <p class="moveBtn"><a href="/login">ログイン画面へ戻る</a></p>
+</div>
 
 {!! Form::close() !!}
 
