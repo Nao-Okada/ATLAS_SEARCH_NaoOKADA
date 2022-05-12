@@ -16,8 +16,8 @@ class RegisterController extends Controller
         return User::create([
             'username' => $data['last'].''.$data['first'],
             'username_kana' => $data['last_kana'].''.$data['first_kana'],
-            'birthday' => $data['birth_year'].''.$data['birth_month'].''.$data['birth_day'],
-            'admission_date' => $data['admission_year'].''.$data['admission_month'].''.$data['admission_date'],
+            'birthday' => date_format($data['birth_year'].''.$data['birth_month'].''.$data['birth_day'], 'Y-m-d'),
+            'admission_date' => date_format($data['admission_year'].''.$data['admission_month'].''.$data['admission_date'], 'Y-m-d'),
             'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -28,22 +28,19 @@ class RegisterController extends Controller
 
         if($request->isMethod('post')){
 
-            // $request->validate([
-            //     'last' => 'required|string|max:15|min:1',
-            //     'first' => 'required|string|max:15|min:1',
-            //     'last_kana' => 'required|string|/\A[ァ-ヶー]+\z/u|max:30|min:1',
-            //     'first_kana' => 'required|string|/\A[ァ-ヶー]+\z/u|max:30|min:1',
-            //     'birthday' => 'required|date_format:d/m/Y',
-            //     'admission_date' => 'required|date_format:d/m/Y',
-            //     'gender' => 'required',
-            //      'email' => 'required|string|email|max:100|unique:users',
-            //     'password' => 'required|string|max:30|min:8|unique:users|confirmed',
-            // ]);
+            $request->validate([
+                'last' => 'required|string|max:15|min:1',
+                'first' => 'required|string|max:15|min:1',
+                'last_kana' => 'required|string|/\A[ァ-ヶー]+\z/u|max:30|min:1',
+                'first_kana' => 'required|string|/\A[ァ-ヶー]+\z/u|max:30|min:1',
+                'birthday' => 'required|date_format:d/m/Y',
+                'admission_date' => 'required|date_format:d/m/Y',
+                'gender' => 'required',
+                 'email' => 'required|string|email|max:100|unique:users',
+                'password' => 'required|string|max:30|min:8|unique:users|confirmed',
+            ]);
 
             $data = $request->input();
-            $data = $request->birthday;
-            $data = $request->admission_date;
-            dd($data);
 
             $this->create($data);
             $request->session()->put('registered', $data['username']);
