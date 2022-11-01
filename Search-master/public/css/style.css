@@ -12,7 +12,7 @@ body {
 
 /* header contents*/
 
-.head #banana {
+.head {
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -23,16 +23,17 @@ body {
   background-color: #fff;
 }
 
-.head .logo {
+/* logo */
+.head #seeker .logo {
   margin: auto 0;
-  padding: 0;
+  padding: 10px 0;
   width: 120px;
   font-size: 28px;
   font-weight: bold;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.2em;
 }
 
-.head #banana .logo a {
+.head #seeker .logo a {
   display: inline-block;
   text-decoration: none;
   color: #000;
@@ -43,6 +44,28 @@ body {
   vertical-align: top;
 }
 
+/* logout */
+.head #side-menu .logout {
+  margin: auto 0;
+  padding: 10px 20px 0 0;
+  width: 120px;
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 0.05em;
+}
+
+.head #side-menu .logout a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+.head #side-menu .logout a:hover {
+  color: #ffe135;
+  border-bottom: 1px solid #ffe135;
+  transition: 0.3s;
+}
+
 /* body */
 #row {
   display: flex;
@@ -50,6 +73,101 @@ body {
 }
 
 #container {
-  width: 70%;
+  width: 100%;
   margin-top: 80px;
+}
+
+/* main contents */
+/* users index */
+#container .main-page {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+#container .main-page #main-contents {
+  width: 75%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+#container .users-index {
+  border: 1px solid #d3d3d3;
+  padding: 20px;
+  margin: 15px 30px;
+}
+
+#container .users-index .username {
+  padding-bottom: 10px;
+}
+
+#container .users-index .user-data {
+  font-weight: 200;
+}
+
+#container .users-index .user-data p {
+  padding-bottom: 5px;
+}
+
+#container .users-index .user-info {
+  display: flex;
+}
+
+#container .users-index .user-info p {
+  padding-right: 10px;
+}
+
+/* search form */
+#container .main-page #search-form {
+  width: 25%;
+}
+
+#container .main-page #search-form .search-title {
+  width: 100%;
+  text-align: center;
+}
+
+#container .main-page #search-form .search-title .title {
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 1.0rem;
+  margin-bottom: 20px;
+}
+
+#container .main-page #search-form .contents {
+  margin: 20px 0;
+}
+
+#container .main-page #search-form .form-title {
+  font-size: 22px;
+  font-weight: 200;
+  padding-bottom: 8px;
+}
+
+#container .main-page #search-form .contents .items {
+  padding-bottom: 5px;
+}
+
+#container .main-page #search-form .btn-search {
+  width: 125px;
+  height: 35px;
+  margin: 0 30%;
+  padding: 5px 10px;
+  background-color: #6C6C6C;
+  border: 1px solid #6C6C6C;
+  color: #fff;
+  border-radius: 5px;
+}
+
+#container .main-page #search-form .btn-search:hover {
+  color: #ffe135;
+  border: 1px solid #ffe135;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+#container .main-page #search-form select,
+#container .main-page #search-form input {
+  border: none;
+  border-bottom: 1px solid #000;
 }
